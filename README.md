@@ -1,2 +1,1 @@
-# CSharp_Practicum
-C#课程设计
+# C#课程设计
