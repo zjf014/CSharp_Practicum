@@ -16,3 +16,14 @@ C:\Users\Dell\Desktop\CSharp课程设计\课程管理系统\obj\Debug\课程管�
 C:\Users\Dell\Desktop\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.Form1.resources
 C:\Users\Dell\Desktop\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.Properties.Resources.resources
 C:\Users\Dell\Desktop\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.csproj.GenerateResource.Cache
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\bin\Debug\课程管理系统.exe.config
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.exe
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.pdb
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\bin\Debug\课程管理系统.exe
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\bin\Debug\课程管理系统.pdb
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.csprojResolveAssemblyReference.cache
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.Form1.resources
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.Properties.Resources.resources
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.csproj.GenerateResource.Cache
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.Form_Student.resources
+E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.Form_Teacher.resources
