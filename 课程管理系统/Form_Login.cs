@@ -78,7 +78,7 @@ namespace 课程管理系统
             //数据库判断
             try
             {
-                SqlConnection conn = new SqlConnection(Properties.Settings.Default.CourceManagementConnectionString);
+                SqlConnection conn = new SqlConnection(Properties.Settings.Default.CourseManagementConnectionString);
                 conn.Open();
 
                 //判断登录类型
@@ -97,7 +97,7 @@ namespace 课程管理系统
                     MessageBox.Show("登录成功!");
 
                     //打开教师窗口
-                    Form_Teacher frmT = new Form_Teacher();
+                    Form_Teacher frmT = new Form_Teacher(textBox1.Text);
                     frmT.Show();
                     this.Hide();
                 }
@@ -106,7 +106,7 @@ namespace 课程管理系统
                     MessageBox.Show("登录成功!");
 
                     //打开学生窗口
-                    Form_Student frmS = new Form_Student();
+                    Form_Student frmS = new Form_Student(textBox1.Text);
                     frmS.Show();
                     this.Hide();
                 }

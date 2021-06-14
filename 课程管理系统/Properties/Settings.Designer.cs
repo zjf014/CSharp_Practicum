@@ -26,11 +26,11 @@ namespace 课程管理系统.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=CourceManagement;User ID=sa;Password=arcgis" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=CourseManagement;User ID=sa;Password=arcgis" +
             "")]
-        public string CourceManagementConnectionString {
+        public string CourseManagementConnectionString {
             get {
-                return ((string)(this["CourceManagementConnectionString"]));
+                return ((string)(this["CourseManagementConnectionString"]));
             }
         }
     }

@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CourceManagementDataSet.Designer.cs">
+    <Compile Include="CourseManagementDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CourceManagementDataSet.xsd</DependentUpon>
+      <DependentUpon>CourseManagementDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
@@ -87,16 +87,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CourceManagementDataSet.xsc">
-      <DependentUpon>CourceManagementDataSet.xsd</DependentUpon>
+    <None Include="CourseManagementDataSet.xsc">
+      <DependentUpon>CourseManagementDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CourceManagementDataSet.xsd">
+    <None Include="CourseManagementDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CourceManagementDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>CourseManagementDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CourceManagementDataSet.xss">
-      <DependentUpon>CourceManagementDataSet.xsd</DependentUpon>
+    <None Include="CourseManagementDataSet.xss">
+      <DependentUpon>CourseManagementDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -27,3 +27,14 @@ E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系�
 E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.csproj.GenerateResource.Cache
 E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.Form_Student.resources
 E:\Codes\CSharp\CSharp课程设计\课程管理系统\obj\Debug\课程管理系统.Form_Teacher.resources
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\bin\Debug\课程管理系统.exe.config
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\obj\Debug\课程管理系统.exe
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\obj\Debug\课程管理系统.pdb
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\bin\Debug\课程管理系统.exe
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\bin\Debug\课程管理系统.pdb
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\obj\Debug\课程管理系统.csprojResolveAssemblyReference.cache
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\obj\Debug\课程管理系统.Form1.resources
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\obj\Debug\课程管理系统.Form_Student.resources
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\obj\Debug\课程管理系统.Form_Teacher.resources
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\obj\Debug\课程管理系统.Properties.Resources.resources
+E:\Code\CSharp\CSharp_Practicum\课程管理系统\obj\Debug\课程管理系统.csproj.GenerateResource.Cache
