@@ -4,4 +4,10 @@
 
 sno | sname | ssex | sage | sclass | sgrade | ssubject
 --- | ----- | ---- | ---- | ------ | ------ | --------
-varchar | varchar | varchar | int | varchar | int | varchar
+学号 | 姓名 | 性别 | 年龄 | 班级 | 年级 | 专业
+
+* Student表
+
+tno | tname | tage | tsex | ttitle
+--- | ----- | ---- | ---- | ------
+教工号 | 姓名 | 年龄 | 性别 | 职称
