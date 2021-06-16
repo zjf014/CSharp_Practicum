@@ -28,11 +28,13 @@ namespace 课程管理系统
             Application.Exit();
         }
 
+        //取消按钮
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //界面载入后在treeview里显示教师姓名和课程
         private void Form_Teacher_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.CourseManagementConnectionString);
@@ -56,9 +58,10 @@ namespace 课程管理系统
             conn.Close();
         }
 
+        //在treeview点击课程名后，在datagridview显示选了该课程的
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (e.Node.Parent != null)
+            if (e.Node.Parent != null) //判断点击的是课程节点而不是教师名称
             {
                 SqlConnection conn = new SqlConnection(Properties.Settings.Default.CourseManagementConnectionString);
                 conn.Open();
@@ -82,23 +85,30 @@ namespace 课程管理系统
 
                 conn.Close();
             }
-
         }
 
+        //保存按钮点击事件
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable dt_before = new DataTable("before");
-            DataTable dt_after = new DataTable("after");
+            //通过dataadapter填充dt_before
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.CourseManagementConnectionString);
+            conn.Open();
 
-            // 列强制转换
-            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            SqlDataAdapter sda = new SqlDataAdapter("select * from Score where cno = @cno",conn);
+            sda.SelectCommand.Parameters.AddWithValue("@cno", cno);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            
+            DataTable dt_before = new DataTable("before");            
+            sda.Fill(dt_before);
+
+            //通过datagridview填充dt_after
+            DataTable dt_after = new DataTable("after");        
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)  //填充列
             {
                 DataColumn dc = new DataColumn(dataGridView1.Columns[i].Name.ToString());
                 dt_after.Columns.Add(dc);
-            }
-
-            // 循环行
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            }            
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)  //循环行
             {
                 DataRow dr = dt_after.NewRow();
                 for (int j = 0; j < dataGridView1.Columns.Count; j++)
@@ -107,18 +117,10 @@ namespace 课程管理系统
                 }
                 dt_after.Rows.Add(dr);
             }
-
             dt_after.Columns.Remove("sname");
 
-            SqlConnection conn = new SqlConnection(Properties.Settings.Default.CourseManagementConnectionString);
-            conn.Open();
 
-            SqlDataAdapter sda = new SqlDataAdapter("select * from Score where cno = @cno",conn);
-            sda.SelectCommand.Parameters.AddWithValue("@cno", cno);
-
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            sda.Fill(dt_before);
-            // 循环行
+            //用dt_after更新到dt_before
             for (int i = 0; i < dt_after.Rows.Count; i++)
             {
                 dt_before.Rows[i]["cno"] = dt_after.Rows[i]["cno"].ToString();
@@ -127,6 +129,7 @@ namespace 课程管理系统
                     dt_before.Rows[i]["score"] = int.Parse(dt_after.Rows[i]["score"].ToString());              
             }
 
+            //把dt_before更新到数据库
             sda.Update(dt_before);
 
             conn.Close();

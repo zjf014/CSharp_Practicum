@@ -78,6 +78,7 @@ namespace 课程管理系统
             //数据库判断
             try
             {
+                //连接数据库
                 SqlConnection conn = new SqlConnection(Properties.Settings.Default.CourseManagementConnectionString);
                 conn.Open();
 
@@ -86,7 +87,7 @@ namespace 课程管理系统
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 object type = cmd.ExecuteScalar();
 
-                if (type == null)
+                if (type == null) //没查到登录类型
                 {
                     MessageBox.Show("用户名或密码不正确!");
                     return;
@@ -111,7 +112,7 @@ namespace 课程管理系统
                     this.Hide();
                 }
 
-                conn.Close();
+                conn.Close();//关闭连接
             }
             catch (Exception ex)
             {
@@ -148,9 +149,8 @@ namespace 课程管理系统
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            //记住用户名
-            if (File.Exists(Directory.GetCurrentDirectory() + "\\user.abc"))
+        {            
+            if (File.Exists(Directory.GetCurrentDirectory() + "\\user.abc"))  //上次登录是记住用户名，则user.abc文件存在
             {
                 this.checkBox1.Checked = true;
                 FileStream fs = new FileStream(Directory.GetCurrentDirectory() + "\\user.abc", FileMode.Open, FileAccess.Read);
@@ -158,8 +158,7 @@ namespace 课程管理系统
                 this.textBox1.Text = sr.ReadLine();
                 sr.Close();
             }
-            //记住密码
-            if (File.Exists(Directory.GetCurrentDirectory() + "\\pass.abc"))
+            if (File.Exists(Directory.GetCurrentDirectory() + "\\pass.abc"))  //上次登录记住密码，则pass.abc文件存在
             {
                 this.checkBox2.Checked = true;
                 FileStream fs = new FileStream(Directory.GetCurrentDirectory() + "\\pass.abc", FileMode.Open, FileAccess.Read);
@@ -171,6 +170,7 @@ namespace 课程管理系统
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            //切换时删除文件
             if (!this.checkBox1.Checked)
             {
                 if (File.Exists(Directory.GetCurrentDirectory() + "\\user.abc"))
@@ -180,6 +180,7 @@ namespace 课程管理系统
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
+            //切换时删除文件
             if (!this.checkBox2.Checked)
             {
                 if (File.Exists(Directory.GetCurrentDirectory() + "\\pass.abc"))

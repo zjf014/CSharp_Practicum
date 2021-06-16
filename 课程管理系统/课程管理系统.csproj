@@ -44,11 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CourseManagementDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CourseManagementDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,17 +82,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CourseManagementDataSet.xsc">
-      <DependentUpon>CourseManagementDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CourseManagementDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CourseManagementDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CourseManagementDataSet.xss">
-      <DependentUpon>CourseManagementDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
