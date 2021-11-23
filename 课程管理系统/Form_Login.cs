@@ -78,14 +78,7 @@ namespace 课程管理系统
             //数据库判断
             try
             {
-                //连接数据库
-                SqlConnection conn = new SqlConnection(Properties.Settings.Default.CourseManagementConnectionString);
-                conn.Open();
-
-                //判断登录类型
-                string sql = "select type from Users where username = '" + textBox1.Text + "' and password = '" + textBox2.Text + "'";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                object type = cmd.ExecuteScalar();
+                string type = DBAccess.getUserType(textBox1.Text, textBox2.Text);
 
                 if (type == null) //没查到登录类型
                 {
@@ -93,7 +86,7 @@ namespace 课程管理系统
                     return;
                 }
                 
-                if (cmd.ExecuteScalar().ToString() == "T")   //如果是教师登录
+                if (type == "T")   //如果是教师登录
                 {
                     MessageBox.Show("登录成功!");
 
@@ -102,7 +95,7 @@ namespace 课程管理系统
                     frmT.Show();
                     this.Hide();
                 }
-                else //如果是学生登录
+                else if(type == "S") //如果是学生登录
                 {
                     MessageBox.Show("登录成功!");
 
@@ -111,8 +104,6 @@ namespace 课程管理系统
                     frmS.Show();
                     this.Hide();
                 }
-
-                conn.Close();//关闭连接
             }
             catch (Exception ex)
             {

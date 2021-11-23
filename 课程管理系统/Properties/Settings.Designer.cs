@@ -22,16 +22,5 @@ namespace 课程管理系统.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=CourseManagement;User ID=sa;Password=arcgis" +
-            "")]
-        public string CourseManagementConnectionString {
-            get {
-                return ((string)(this["CourseManagementConnectionString"]));
-            }
-        }
     }
 }
