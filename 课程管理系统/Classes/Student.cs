@@ -29,8 +29,9 @@ namespace 课程管理系统
             //查询学生信息
             DBAccess.initConnection();
 
-            string sql = "select sno, sname, ssubject from Student where sno = '" + this.sno + "'";
+            string sql = "select sno, sname, ssubject from Student where sno = @sno";
             DBAccess.cmd = new SqlCommand(sql, DBAccess.conn);
+            DBAccess.cmd.Parameters.AddWithValue("@sno", this.sno);
             SqlDataReader dr = DBAccess.cmd.ExecuteReader();
 
             if (dr.Read())

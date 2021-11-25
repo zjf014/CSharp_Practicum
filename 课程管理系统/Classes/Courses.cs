@@ -41,13 +41,15 @@ namespace 课程管理系统
 
             DBAccess.initConnection();
 
-            string sql = "select count(*) from score where sno = '" + sno + "'";
+            string sql = "select count(*) from score where sno = @sno";
             DBAccess.cmd = new SqlCommand(sql, DBAccess.conn);
+            DBAccess.cmd.Parameters.AddWithValue("@sno", sno);
             int c = int.Parse(DBAccess.cmd.ExecuteScalar().ToString());
             someone = new string[c];
 
-            sql = "select score.cno,cname from score,course where score.cno = course.cno and sno = '" + sno + "'";
-            DBAccess.cmd.CommandText = sql;
+            sql = "select score.cno,cname from score,course where score.cno = course.cno and sno = @sno";
+            DBAccess.cmd = new SqlCommand(sql, DBAccess.conn);
+            DBAccess.cmd.Parameters.AddWithValue("@sno", sno);
             SqlDataReader dr = DBAccess.cmd.ExecuteReader();
 
             int i = 0;
@@ -63,8 +65,10 @@ namespace 课程管理系统
         {
             DBAccess.initConnection();
 
-            string sql = "insert into score(sno,cno) values('" + sno + "','" + cno + "')";
+            string sql = "insert into score(sno,cno) values(@sno,@cno)";
             DBAccess.cmd = new SqlCommand(sql, DBAccess.conn);
+            DBAccess.cmd.Parameters.AddWithValue("@sno", sno);
+            DBAccess.cmd.Parameters.AddWithValue("@cno", cno);
             return DBAccess.cmd.ExecuteNonQuery();
         }
 
@@ -72,8 +76,10 @@ namespace 课程管理系统
         {
             DBAccess.initConnection();
 
-            string sql = "delete from score where sno = '" + sno + "' and cno = '" + cno + "'";
+            string sql = "delete from score where sno = @sno and cno = @cno";
             DBAccess.cmd = new SqlCommand(sql, DBAccess.conn);
+            DBAccess.cmd.Parameters.AddWithValue("@sno", sno);
+            DBAccess.cmd.Parameters.AddWithValue("@cno", cno);
             return DBAccess.cmd.ExecuteNonQuery();
         }
     }

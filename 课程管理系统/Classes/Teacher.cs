@@ -28,8 +28,9 @@ namespace 课程管理系统
             //查询教师信息
             DBAccess.initConnection();
 
-            string sql = "select tname from teacher where tno = '" + this.tno + "'";
+            string sql = "select tname from teacher where tno = @tno";
             DBAccess.cmd = new SqlCommand(sql, DBAccess.conn);
+            DBAccess.cmd.Parameters.AddWithValue("@tno", this.tno);
             SqlDataReader dr = DBAccess.cmd.ExecuteReader();
 
             if (dr.Read())
@@ -45,13 +46,15 @@ namespace 课程管理系统
 
             DBAccess.initConnection();
 
-            string sql = "select count(*) from course where teacher = '" + this.tno + "'";
+            string sql = "select count(*) from course where teacher = @tno";
             DBAccess.cmd = new SqlCommand(sql, DBAccess.conn);
+            DBAccess.cmd.Parameters.AddWithValue("@tno", this.tno);
             int c = int.Parse(DBAccess.cmd.ExecuteScalar().ToString());
             cnames = new string[c];
 
-            sql = "select cno,cname from course where teacher = '" + this.tno + "'";
-            DBAccess.cmd.CommandText = sql;
+            sql = "select cno,cname from course where teacher = @tno";
+            DBAccess.cmd = new SqlCommand(sql, DBAccess.conn);
+            DBAccess.cmd.Parameters.AddWithValue("@tno", this.tno);
             SqlDataReader dr = DBAccess.cmd.ExecuteReader();
 
             int i = 0;

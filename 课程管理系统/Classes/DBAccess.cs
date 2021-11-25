@@ -32,8 +32,10 @@ namespace 课程管理系统
                 initConnection();
 
                 //判断登录类型
-                string sql = "select type from Users where username = '" + username + "' and password = '" + password + "'";
+                string sql = "select type from Users where username = @usr and password = @pwd";
                 SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@usr", username);
+                cmd.Parameters.AddWithValue("@pwd", password);
                 type = cmd.ExecuteScalar().ToString();
 
                 return type;

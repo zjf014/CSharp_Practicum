@@ -39,12 +39,6 @@ namespace 课程管理系统
             if (radioButton1.Checked) //教工登录
             {
                 //判断教工号
-                if (this.textBox1.Text == "")
-                {
-                    MessageBox.Show("请输入教工号！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
                 if (!Regex.IsMatch(this.textBox1.Text, @"^\d{6}$"))
                 {
                     MessageBox.Show("教工号格式错误！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -55,11 +49,6 @@ namespace 课程管理系统
             else //学生登录
             {
                 //判断学号
-                if (this.textBox1.Text == "")
-                {
-                    MessageBox.Show("请输入学号！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
                 if (!Regex.IsMatch(this.textBox1.Text, @"^\d{12}$"))
                 {
                     MessageBox.Show("学号格式错误！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
